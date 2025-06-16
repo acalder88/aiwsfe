@@ -27,6 +27,12 @@ export default function Chat({ token }) {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
   }, [messages]);
 
+  // Add logout handler
+  const handleLogout = () => {
+    localStorage.removeItem('token');
+    window.location.reload();
+  };
+
   return (
     <div style={{
       display: 'flex',
@@ -34,8 +40,30 @@ export default function Chat({ token }) {
       alignItems: 'center',
       minHeight: '100vh',
       background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
-      padding: '1rem'
+      padding: '1rem',
+      position: 'relative'
     }}>
+      {/* Logout Button */}
+      <button
+        onClick={handleLogout}
+        style={{
+          position: 'absolute',
+          top: '2rem',
+          right: '2rem',
+          background: '#e53e3e',
+          color: '#fff',
+          border: 'none',
+          borderRadius: '5px',
+          padding: '0.5rem 1.25rem',
+          fontWeight: 'bold',
+          fontSize: '1rem',
+          cursor: 'pointer',
+          boxShadow: '0 2px 8px rgba(229,62,62,0.08)',
+          zIndex: 10
+        }}
+      >
+        Logout
+      </button>
       <div style={{
         background: '#fff',
         padding: '2rem',
