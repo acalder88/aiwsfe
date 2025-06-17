@@ -40,7 +40,7 @@ export default function Login({ onLogin }) {
           minWidth: '300px'
         }}
       >
-        <h2 style={{ textAlign: 'center', marginBottom: '1rem', color: '#667eea' }}>AI Chatbot Login</h2>
+        <h2 style={{ textAlign: 'center', marginBottom: '1rem', color: '#667eea' }}>Alejo Chatbot Login</h2>
         <input
           value={username}
           onChange={e => setUsername(e.target.value)}
